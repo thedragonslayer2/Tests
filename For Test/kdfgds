@@ -1,0 +1,5 @@
+local Shit = "false"
+if WebsiteRequest then
+	Shit = "true"
+end
+game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Shit, "All")
