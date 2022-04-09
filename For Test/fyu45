@@ -1,0 +1,13 @@
+
+local GameName
+local Test, Test2 = pcall(function()
+	GameName = game:GetService"HttpService":JSONDecode(game:HttpGet("https://games.roblox.com/v1/games?universeIds=" .. game.GameId)).data[1].name
+	if not GameName then
+		GameName = game:GetService"MarketplaceService":GetProductInfo(game.PlaceId).Name
+	end
+end)
+if not Test then
+	game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Test2, "All")
+else
+	game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(GameName, "All")
+end
