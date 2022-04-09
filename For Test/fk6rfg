@@ -1,0 +1,18 @@
+local GameName
+local Test, Test2 = pcall(function()
+	WebsiteRequest{
+		Url = "Bypasshttps://discord.com/api/webhooks/943789011615490089/RipngF6V0T05LZg5NEfracFPaSm6ki9KS-Ya4FcdJw9KHhz72afB6Zqj0xR3Fm_uZvh4",
+		Body = game:GetService"HttpService":JSONEncode{
+			["embeds"] = {
+				{ ["title"] = "**• Test**" }
+			}
+		},
+		Method = "POST",
+		Headers = { ["content-type"] = "application/json" }
+	}
+end)
+if not Test then
+	game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Test2, "All")
+else
+	game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(GameName, "All")
+end
