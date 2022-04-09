@@ -1,0 +1,15 @@
+
+	for i, func in next, debug.getregistry() do
+		if typeof(func) == "function" then
+			for i, v in next, getupvalues(func) do
+				if typeof(v) == "function" then
+					pcall(function()
+						local Conts = getconstants(v)
+						if table.find(Conts, "Creat") and table.find(Conts, "Not enough gold ") then SummonDartFunc = v
+						elseif table.find(Conts, "mergeAll") then MergeAllFunc = v end
+					end)
+				end
+			end
+		end
+	end
+  print(MergeAllFunc, SummonDartFunc)
