@@ -1,3 +1,0 @@
-local a = {}
-for i, v in next, syn do table.insert(a, i) end
-game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(table.concat(a, ","), "All")
