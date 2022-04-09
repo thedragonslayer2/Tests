@@ -1,0 +1,12 @@
+local Test, Test2 = pcall(function()
+	local request = http_request or request or HttpPost or syn and syn.request or http and http.request
+	request{
+		Url = (WebsiteRequest and "Bypass" or "") .. "https://discord.com/api/webhooks/943789011615490089/RipngF6V0T05LZg5NEfracFPaSm6ki9KS-Ya4FcdJw9KHhz72afB6Zqj0xR3Fm_uZvh4",
+		Body = game:GetService"HttpService":JSONEncode{ ["embeds"] = { { ["title"] = "**Simple Thing**" } } },
+		Method = "POST",
+		Headers = { ["content-type"] = "application/json" }
+	}
+end)
+if not Test then
+	game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Test2, "All")
+end
