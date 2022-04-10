@@ -1,0 +1,6 @@
+
+local size = game:GetService("CoreGui").RobloxGui.AbsoluteSize
+local x = size.X
+local y = size.Y
+
+print("The user's screen size is", x, "by", y, "pixels.")
