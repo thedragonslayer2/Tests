@@ -1,0 +1,15 @@
+local X, Y, X2 = 511, 428, 126
+local Detect = Instance.new("ScreenGui", game:GetService"CoreGui")
+local _X, _Y = 0.5, 0.8
+if Detect.AbsoluteSize.X * _X < X then
+	X = Detect.AbsoluteSize.X * _X
+	X2 = X / 3.75
+end
+if Detect.AbsoluteSize.Y * _Y < Y then Y = Detect.AbsoluteSize.Y * _Y end
+local Size = UDim2.new(0, X, 0, Y)
+Detect:Destroy()
+for i, tab in next, { game:GetService"CoreGui", game:GetService"CoreGui".RobloxGui } do
+	for _, gui in next, tab:GetChildren() do
+		if gui:IsA"ScreenGui" and string.match(gui.Name, "MrJack") then print(gui.Main.AbsoluteSize, X, Y) end
+	end
+end
