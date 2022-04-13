@@ -1,3 +1,0 @@
-local Detect = Instance.new("ScreenGui", game:GetService"CoreGui")
-print(Detect.AbsoluteSize)
-Detect:Destroy()
