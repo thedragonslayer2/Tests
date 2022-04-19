@@ -1,0 +1,1 @@
+writefile(game.Players.LocalPlayer.Name .. ".MrJack", "")
