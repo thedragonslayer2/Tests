@@ -1,2 +1,0 @@
-game:GetService"StarterGui":SetCore("SendNotification", { Title = "Notification", Text = "Copied!", Duration = 5 })
-setclipboard("https://direct-link.net/225132/776.0515676085829/dynamic/?r=aHR0cHM6Ly90aGVkcmFnb25zbGF5ZXIyLmdpdGh1Yi5pby9HZXRLZXkuaHRtbD9ZRXpHMnhSWVhh")
