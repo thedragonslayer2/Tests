@@ -1,0 +1,16 @@
+local GUI, Vp = game.CoreGui:FindFirstChild"ScreenGui" or Instance.new("ScreenGui", game.CoreGui), workspace.CurrentCamera.ViewportSize
+GUI.ResetOnSpawn = false
+GUI.IgnoreGuiInset = true
+local Image = GUI:FindFirstChild"ImageLabel" or Instance.new("ImageLabel", GUI)
+_G.Vec2 = Vector2.new(Vp.X / 2, Vp.Y / 2 - game:GetService"GuiService":GetGuiInset().Y / 2)
+Image.Image = "rbxassetid://9202609638"
+Image.AnchorPoint = Vector2.new(0.5, 0.5)
+Image.Position = UDim2.new(0.5, 0, 0.5, 0)
+Image.Size = UDim2.new(0, 300, 0, 300)
+Image.Active = false
+Image.ImageColor3 = Color3.fromRGB(0, 0, 0)
+Image.BackgroundTransparency = 1
+game:GetService"RunService".Stepped:Connect(function()
+	Image.Position = UDim2.new(0, _G.Vec2.X, 0, _G.Vec2.Y)
+	Image.Visible = true
+end)
