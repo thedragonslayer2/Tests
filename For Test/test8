@@ -1,0 +1,1 @@
+_G.Vec2 = Vector2.new(Vp.X / 2, Vp.Y / 2 - game:GetService"GuiService":GetGuiInset().Y / 2 - 36)
